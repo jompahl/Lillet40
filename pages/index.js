@@ -1,115 +1,93 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Navbar from "../components/navbar";
+import { StaticGoogleMap, Marker, Path } from "react-static-google-map";
 
 export default function Home() {
+  function handleClick() {
+    window.location =
+      "mailto:johndahlberg@hotmail.com ? &subject=Lillet 40 år &body=Namn:";
+  }
+
+  function showInMapClicked() {
+    window.open("https://maps.google.com?q=57.708870,11.974560");
+  }
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        width: "100%",
+        background:
+          "linear-gradient(0deg, rgb(233,233,233), rgba(233, 233, 233, 0.7)), url(/images/lillet.jpg)",
+        backgroundSize: "cover",
+      }}
+    >
+      <Navbar></Navbar>
+      <div
+        style={{
+          display: "flex",
+          flexGrow: "1",
+          flexDirection: "column",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+        }}
+      >
+        <div className="imageContainer">
+          <div className="image">
+            <img src="/images/lilletFace.jpg"></img>
+          </div>
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+        <div className="textContainer">
+          <p>
+            <b>Lillet</b> is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum
+          </p>
+          <StaticGoogleMap
+            size="600x600"
+            apiKey="AIzaSyBY3NyQJO8KUYmIoQanyPF5ozjSPdF7d4Y"
+            className="map"
+          >
+            <Marker.Group label="L" color="green">
+              <Marker location="57.708870,11.974560" />
+            </Marker.Group>
+          </StaticGoogleMap>
+          <p>
+            Adress: <a onClick={() => showInMapClicked()}>TODO FÅ ADRESS</a>
+          </p>
+          <p>Osa genom att klicka på knappen nedan!</p>
+          <button
+            style={{
+              width: "70%",
+              color: "rgb(233,233,233)",
+              backgroundColor: "rgb(100,143,123)",
+              borderRadius: "5px",
+              padding: "2px",
+              border: "0px",
+              marginBottom: "20px",
+              boxShadow:
+                "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
+            }}
+          >
+            <h3
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+              onClick={() => handleClick()}
+            >
+              OSA
+            </h3>
+          </button>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
