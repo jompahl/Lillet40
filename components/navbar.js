@@ -2,22 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div
-      style={{
-        top: "0",
-        zIndex: "20",
-        display: "flex",
-        flex: "0 0 100px",
-        flexShrink: "1",
-        justifyContent: "center",
-        height: "100px",
-        width: "100%",
-        backgroundColor: "rgba(0,0,0,0.6)",
-        position: "sticky",
-        backdropFilter: "blur(8px)",
-        boxShadow: "0 20px 30px rgba(0,0,0,0.15)",
-      }}
-    >
+    <div className="navbar">
       <div
         style={{
           display: "flex",

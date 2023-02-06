@@ -13,6 +13,22 @@ body {
   background-image: "images\lillet.jpg";
 }
 
+.navbar {
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex: 0 0 100px;
+  flex-shrink: 1;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: sticky;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
 .footer {
   height: 50px;
   align-items: center;
