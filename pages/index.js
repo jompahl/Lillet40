@@ -6,7 +6,7 @@ import "react-jigsaw-puzzle/lib/jigsaw-puzzle.css";
 import React, { useState } from "react";
 
 export default function Home() {
-  const [solved, setText] = useState(true);
+  const [solved, setText] = useState(false);
 
   const set = () => {
     setText(true);
@@ -101,7 +101,7 @@ export default function Home() {
                 borderRadius: "5px",
                 padding: "4px",
                 border: "0px",
-                marginBottom: "20px",
+                marginBottom: "30px",
                 boxShadow:
                   "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
               }}
