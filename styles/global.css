@@ -29,6 +29,14 @@ body {
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
 }
 
+.countdown-timer {
+  color: rgb(233, 233, 233);
+}
+
+.puzzleContainer {
+  height: 100vh;
+}
+
 .footer {
   height: 50px;
   align-items: center;

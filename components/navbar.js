@@ -1,6 +1,13 @@
 import React from "react";
+import CountDownTimer from "./countDownTimer";
 
 const Navbar = () => {
+  function getMs() {
+    const date = new Date("May 13, 2023 16:30:00");
+    let ms = date.getTime();
+    return ms;
+  }
+
   return (
     <div className="navbar">
       <div
@@ -11,14 +18,21 @@ const Navbar = () => {
           width: "20%",
           minWidth: "350px",
           height: "100%",
+          flexDirection: "column",
         }}
       >
-        {/* <img style={{ objectFit: "contain" }} src="/images/bread.png"></img> */}
-        <h1 style={{ color: "rgb(233,233,233)", fontFamily: "" }}>#Lillet40</h1>
-        {/* <img
-          style={{ objectFit: "contain", transform: "rotateY(180deg)" }}
-          src="/images/bread.png"
-        ></img> */}
+        <h2
+          style={{
+            color: "rgb(233,233,233)",
+            fontFamily: "",
+            marginBottom: "-12px",
+            marginTop: "2px",
+          }}
+        >
+          #Lillet40
+        </h2>
+
+        <CountDownTimer countdownTimestampMs={getMs()} />
       </div>
     </div>
   );

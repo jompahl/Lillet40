@@ -1,14 +1,28 @@
 import Navbar from "../components/navbar";
 import { StaticGoogleMap, Marker, Path } from "react-static-google-map";
+import { JigsawPuzzle } from "react-jigsaw-puzzle/lib";
+import "react-jigsaw-puzzle/lib/jigsaw-puzzle.css";
+
+import React, { useState } from "react";
 
 export default function Home() {
+  const [solved, setText] = useState(false);
+
+  const set = () => {
+    setText(true);
+  };
+
   function handleClick() {
     window.location =
-      "mailto:johndahlberg@hotmail.com ? &subject=Lillet 40 år &body=Namn:";
+      "mailto:saragrottling@gmail.com ? &subject=Lillet 40 år &body=Va kul med fest Maria!%0D%0DJag/Vi kommer! (skriv namn):%0D%0DTyvärr Maria, vi kan inte komma (skriv namn):%0D%0DAllergier/Specialkost (skriv namn):%0D%0DJag/Vi vill boka hotellrum, antal rum:%0D%0DJa! Jag/Vi vill gärna dyka in tidigt och äta lunch på Gottskär Hotell, antal:%0D%0DJa! jag vill ha storstyrk i minigolf av Lillet! (ja/nej)%0D%0DVi/Jag kommer lagom till fördrinken <3 (ja/nej)";
   }
 
   function showInMapClicked() {
-    window.open("https://maps.google.com?q=57.708870,11.974560");
+    window.open("https://maps.google.com?q=Gottskär+Hotell");
+  }
+
+  function openLink(link) {
+    window.open(link);
   }
 
   return (
@@ -24,70 +38,102 @@ export default function Home() {
       }}
     >
       <Navbar></Navbar>
-      <div
-        style={{
-          display: "flex",
-          flexGrow: "1",
-          flexDirection: "column",
-          justifyContent: "space-evenly",
-          alignItems: "center",
-        }}
-      >
-        <div className="imageContainer">
-          <div className="image">
-            <img src="/images/lilletFace.jpg"></img>
+      {solved ? (
+        <div
+          style={{
+            display: "flex",
+            flexGrow: "1",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
+          <div className="imageContainer">
+            <div className="image">
+              <img src="/images/lilletFace.jpg"></img>
+            </div>
+          </div>
+          <div className="textContainer">
+            <p>
+              Välkomna att fira min 40- års dag tillsammans med mig!<br></br>
+              <b>När?</b> 13 Maj kl 16.30<br></br>
+              <b>Var?</b> Gottskär Hotell, Onsala
+              <br></br>
+              <b>Hur?</b> Fördrink serveras förhoppningsvis utomhus kl 16.30 och
+              väl till bords serveras en välkomponerad meny med tillhörande
+              dryck. Känn er fria att hitta på hyss under kvällen men anmäl
+              gärna på förhand till Ebba och Hans tillika kvällens Toastmadame
+              och Toastmaster.<br></br>
+              <b>Klädsel:</b> Kavaj <br></br>
+              <b>Boende:</b> Om Ni vill boka hotellövernattning inklusive
+              frukost till rabatterat pris så anger Ni det nedan. Läs mer om{" "}
+              <a onClick={() => openLink("https://www.gottskarhotell.com/")}>
+                Gottskär Hotell.
+              </a>
+              <br></br>
+            </p>
+            <StaticGoogleMap
+              size="600x600"
+              apiKey="AIzaSyBY3NyQJO8KUYmIoQanyPF5ozjSPdF7d4Y"
+              className="map"
+            >
+              <Marker.Group label="L" color="green">
+                <Marker location="57.390345,12.01140" />
+              </Marker.Group>
+            </StaticGoogleMap>
+            <p>
+              Adress:{" "}
+              <a onClick={() => showInMapClicked()}>Landstormsvägen 31</a>
+            </p>
+            <p>
+              <b>OSA:</b> Senast 31 mars genom knappen nedan. Vill ni dyka in
+              tidigare för att nyttja Gottskär´s faciliteter och omgivningar så
+              serveras lunch från 11.30 (179:-) Jag kommer själv att äta lunch
+              och utmanar er som törs i en minigolfturnering kl 13. Varmt
+              välkomna
+            </p>
+
+            <button
+              style={{
+                width: "70%",
+                color: "rgb(233,233,233)",
+                backgroundColor: "rgb(100,143,123)",
+                borderRadius: "5px",
+                padding: "2px",
+                border: "0px",
+                marginBottom: "20px",
+                boxShadow:
+                  "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
+              }}
+            >
+              <h3
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+                onClick={() => handleClick()}
+              >
+                OSA
+              </h3>
+            </button>
           </div>
         </div>
-        <div className="textContainer">
-          <p>
-            <b>Lillet</b> is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum
-          </p>
-          <StaticGoogleMap
-            size="600x600"
-            apiKey="AIzaSyBY3NyQJO8KUYmIoQanyPF5ozjSPdF7d4Y"
-            className="map"
+      ) : (
+        <div className="puzzleContainer">
+          <h3 style={{ textAlign: "center" }}>Lös mig!</h3>
+          <div
+            style={{ border: "1px solid rgb(100,143,123)", maxWidth: "500px" }}
           >
-            <Marker.Group label="L" color="green">
-              <Marker location="57.708870,11.974560" />
-            </Marker.Group>
-          </StaticGoogleMap>
-          <p>
-            Adress: <a onClick={() => showInMapClicked()}>TODO FÅ ADRESS</a>
-          </p>
-          <p>Osa genom att klicka på knappen nedan!</p>
-          <button
-            style={{
-              width: "70%",
-              color: "rgb(233,233,233)",
-              backgroundColor: "rgb(100,143,123)",
-              borderRadius: "5px",
-              padding: "2px",
-              border: "0px",
-              marginBottom: "20px",
-              boxShadow:
-                "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
-            }}
-          >
-            <h3
-              style={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-              onClick={() => handleClick()}
-            >
-              OSA
-            </h3>
-          </button>
+            <JigsawPuzzle
+              imageSrc="/images/lilletFace.jpg"
+              rows={3}
+              columns={3}
+              onSolved={set}
+              className="jigsaw-puzzle"
+            />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
