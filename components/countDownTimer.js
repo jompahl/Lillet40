@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getRemainingTimeUntilMsTimestamp } from "./countdownTimerUtils";
+import { getRemainingTimeUntilMsTimestamp } from "./countDownTimerUtils";
 
 const defaultRemainingTime = {
   seconds: "00",
