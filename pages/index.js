@@ -14,7 +14,7 @@ export default function Home() {
 
   function handleClick() {
     window.location =
-      "mailto:saragrottling@gmail.com ? &subject=Lillet 40 år &body=Va kul med fest Maria!%0D%0DJag/Vi kommer! (skriv namn):%0D%0DTyvärr Maria, vi kan inte komma (skriv namn):%0D%0DAllergier/Specialkost (skriv namn):%0D%0DJag/Vi vill boka hotellrum, antal rum:%0D%0DJa! Jag/Vi vill gärna dyka in tidigt och äta lunch på Gottskär Hotell, antal:%0D%0DJa! jag vill ha storstyrk i minigolf av Lillet! (ja/nej)%0D%0DVi/Jag kommer lagom till fördrinken <3 (ja/nej)";
+      "mailto:saragrottling@gmail.com ? &subject=Lillet 40 år &body=Va kul med fest Maria!%0D%0DJag/Vi kommer! (skriv namn):%0D%0DTyvärr Maria, vi kan inte komma (skriv namn):%0D%0DAllergier/Specialkost (skriv namn):%0D%0DJag/Vi vill boka hotellrum, antal rum:%0D%0DJa! Jag/Vi vill gärna dyka in tidigt och äta lunch på Gottskär Hotell, antal:%0D%0DJa! Jag vill ha storstyrk i minigolf av Lillet! (ja/nej)%0D%0DVi/Jag kommer lagom till fördrinken <3 (ja/nej)";
   }
 
   function showInMapClicked() {
@@ -55,20 +55,32 @@ export default function Home() {
           </div>
           <div className="textContainer">
             <p>
-              Välkomna att fira min 40- års dag tillsammans med mig!<br></br>
+              <b style={{ display: "flex", textAlign: "center" }}>
+                Välkomna att fira min 40- års dag tillsammans med mig!
+              </b>
+              <br></br>
               <b>När?</b> 13 Maj kl 16.30<br></br>
               <b>Var?</b> Gottskär Hotell, Onsala
               <br></br>
               <b>Hur?</b> Fördrink serveras förhoppningsvis utomhus kl 16.30 och
               väl till bords serveras en välkomponerad meny med tillhörande
               dryck. Känn er fria att hitta på hyss under kvällen men anmäl
-              gärna på förhand till Ebba och Hans tillika kvällens Toastmadame
-              och Toastmaster.<br></br>
+              gärna på förhand till{" "}
+              <a href="mailto:Ebba.Didring@gmail.com">Ebba</a> och{" "}
+              <a href="mailto:Hans.Didring@protectorforsakring.se">Hans</a>{" "}
+              tillika kvällens Toastmadame och Toastmaster.<br></br>
               <b>Klädsel:</b> Kavaj <br></br>
               <b>Boende:</b> Om Ni vill boka hotellövernattning inklusive
-              frukost till rabatterat pris så anger Ni det nedan. Läs mer om{" "}
+              frukost till rabatterat pris (1250-1450 kr) så anger Ni det nedan.
+              Läs mer om{" "}
               <a onClick={() => openLink("https://www.gottskarhotell.com/")}>
                 Gottskär Hotell.
+              </a>{" "}
+              <br></br>
+              <br></br>
+              Frågor besvaras på{" "}
+              <a href="mailto:saragrottling@gmail.com">
+                saragrottling@gmail.com
               </a>
               <br></br>
             </p>
@@ -86,11 +98,11 @@ export default function Home() {
               <a onClick={() => showInMapClicked()}>Landstormsvägen 31</a>
             </p>
             <p>
-              <b>OSA:</b> Senast 31 mars genom knappen nedan. Vill ni dyka in
-              tidigare för att nyttja Gottskär´s faciliteter och omgivningar så
-              serveras lunch från 11.30 (179:-) Jag kommer själv att äta lunch
-              och utmanar er som törs i en minigolfturnering kl 13. Varmt
-              välkomna
+              <b style={{ display: "flex", justifyContent: "center" }}>OSA:</b>{" "}
+              Senast 31 mars genom knappen nedan. Vill ni dyka in tidigare för
+              att nyttja Gottskär´s faciliteter och omgivningar så serveras
+              lunch från 11.30 (179:-) Själv kommer jag att äta lunch och
+              utmanar er som törs i en minigolfturnering kl 13. Varmt välkomna!
             </p>
 
             <button
@@ -120,9 +132,13 @@ export default function Home() {
         </div>
       ) : (
         <div className="puzzleContainer">
-          <h3 style={{ textAlign: "center" }}>Lös mig!</h3>
+          <h3 style={{ textAlign: "center" }}>Pussla ihop mig!</h3>
           <div
-            style={{ border: "1px solid rgb(100,143,123)", maxWidth: "500px" }}
+            style={{
+              border: "3px solid rgb(100,143,123)",
+              margin: "6px",
+              maxWidth: "500px",
+            }}
           >
             <JigsawPuzzle
               imageSrc="/images/lilletFace.jpg"

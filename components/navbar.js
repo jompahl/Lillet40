@@ -18,21 +18,18 @@ const Navbar = () => {
           width: "20%",
           minWidth: "350px",
           height: "100%",
-          flexDirection: "column",
         }}
       >
         <h2
           style={{
             color: "rgb(233,233,233)",
             fontFamily: "",
-            marginBottom: "-12px",
-            marginTop: "2px",
+            display: "flex",
           }}
         >
-          #Lillet40
+          <CountDownTimer countdownTimestampMs={getMs()} />
+          &nbsp;to&nbsp;#Lillet40
         </h2>
-
-        <CountDownTimer countdownTimestampMs={getMs()} />
       </div>
     </div>
   );
