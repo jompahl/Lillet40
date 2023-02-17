@@ -30,7 +30,7 @@ export default function Home() {
       style={{
         display: "flex",
         flexDirection: "column",
-        height: "100%",
+        height: solved ? "100%" : "100vh",
         width: "100%",
         background:
           "linear-gradient(0deg, rgb(233,233,233), rgba(233, 233, 233, 0.7)), url(/images/lillet.jpg)",
@@ -132,12 +132,15 @@ export default function Home() {
         </div>
       ) : (
         <div className="puzzleContainer">
-          <h3 style={{ textAlign: "center" }}>Pussla ihop mig!</h3>
+          <h4 style={{ textAlign: "center", margin: "2px" }}>
+            Pussla ihop mig!
+          </h4>
           <div
             style={{
               border: "3px solid rgb(100,143,123)",
               margin: "6px",
               maxWidth: "500px",
+              width: "100%",
             }}
           >
             <JigsawPuzzle
