@@ -55,7 +55,13 @@ export default function Home() {
           </div>
           <div className="textContainer">
             <p>
-              <b style={{ display: "flex", textAlign: "center" }}>
+              <b
+                style={{
+                  display: "flex",
+                  textAlign: "center",
+                  justifyContent: "center",
+                }}
+              >
                 Välkomna att fira min 40- års dag tillsammans med mig!
               </b>
               <br></br>

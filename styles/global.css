@@ -88,7 +88,7 @@ a:hover {
   flex-direction: column;
   gap: 30px;
   padding-top: 20px;
-  justify-content: center;
+  align-items: center;
 }
 
 img {
@@ -123,9 +123,6 @@ img {
 @media screen and (min-width: 900px) {
   .textContainer {
     width: 50%;
-  }
-  .imageContainer {
-    flex-direction: row;
   }
 }
 
