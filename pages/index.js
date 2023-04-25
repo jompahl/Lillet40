@@ -72,9 +72,9 @@ export default function Home() {
               väl till bords serveras en välkomponerad meny med tillhörande
               dryck. Känn er fria att hitta på hyss under kvällen men anmäl
               gärna på förhand till{" "}
-              <a href="mailto:Ebba.Didring@gmail.com">Ebba</a> och{" "}
-              <a href="mailto:Hans.Didring@protectorforsakring.se">Hans</a>{" "}
-              tillika kvällens Toastmadame och Toastmaster.<br></br>
+              <a href="mailto:annadahlberg75@hotmail.com">Anna</a> och{" "}
+              <a href="mailto:johndahlberg@hotmail.com">John</a> tillika
+              kvällens Toastmasters.<br></br>
               <b>Klädsel:</b> Kavaj <br></br>
               <b>Boende:</b> Om Ni vill boka hotellövernattning inklusive
               frukost till rabatterat pris (1250-1450 kr) så anger Ni det nedan.
